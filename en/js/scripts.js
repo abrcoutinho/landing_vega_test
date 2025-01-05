@@ -203,8 +203,25 @@ function iframeFull() {
 }
 
 
+// Figma prototype
+const iframeFig = document.querySelector(".report_screen iframe");
+function iframeFigLoad(x) {
+  if (x.matches) {
+    iframeFig.removeAttribute('src');
+  }
+  else {
+    iframeFig.src = 'https://embed.figma.com/proto/XN25DJKlIwrG68RNacZ7Ch/Iframe-dashboard-landingpage?page-id=0%3A1&node-id=1-8626&node-type=frame&viewport=312%2C252%2C0.4&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=1%3A8626&embed-host=share&hide-ui=1';
+  }
+}
+var x = window.matchMedia("(max-width: 40rem)")
+iframeFigLoad(x);
+x.addEventListener("change", function() {
+  iframeFigLoad(x);
+});
 
-// GSAP
+
+
+
 document.addEventListener("DOMContentLoaded", (event) => {
   gsap.registerPlugin(MotionPathPlugin, ScrollTrigger);
 
@@ -257,8 +274,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
     }
   });
   gsap.to(".checkout_slides ul:last-child", {
-    x: 700,
-    duration: 3,
+    x: 100,
+    duration: 2,
     scrollTrigger: {
       trigger: ".checkout_slides",
       start: "center bottom",
@@ -436,11 +453,11 @@ onUpdate: (self) => {
   speedTween && speedTween.kill();
   speedTween = gsap.timeline()
   .to(tl, {
-    timeScale: 5 * self.direction,
+    timeScale: 4 * self.direction,
     duration: 0.25
   })
   .to(tl, {
-    timeScale: 3 * self.direction,
+    timeScale: 2 * self.direction,
     duration: 1.5
   }, "+=0.5")
 },
