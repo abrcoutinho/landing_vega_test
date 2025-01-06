@@ -547,9 +547,9 @@ magicMouse(options);
     const { offsetX: x, offsetY: y } = e,
     { offsetWidth: width, offsetHeight: height } = this,
 
-    move = 50,
-    xMove = x / width * (move * 2) - move,
-    yMove = y / height * (move * 2) - move;
+    move = 40,
+    xMove = x / width * (move * 1.8) - move,
+    yMove = y / height * (move * 1.8) - move;
 
     span.style.transform = `translate(${xMove}px, ${yMove}px)`;
 
