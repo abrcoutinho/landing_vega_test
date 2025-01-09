@@ -120,7 +120,7 @@
 		</hgroup>
 
 		<form id="signup" class="access" name="signup" method="get" action="https://admin.vegacheckout.com.br/register">
-			<input type="email" placeholder=" " pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" id="signup_email" name="email" required autocomplete="off">
+			<input type="email" placeholder=" " onclick="" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" id="signup_email" name="email" required autocomplete="off">
 			<label for="signup_email">Comece <b>grátis</b>, digite seu e-mail</label>
 			<button type="submit" title="Criar conta" name="submit" class="magic-hover"></button>
 		</form>
@@ -442,7 +442,19 @@
 	<!-- Planos -->
 	<div class="plans" id="pricing">
 		<h2>Planos</h2>
-		<div>
+		<div class="plan_tabs">
+			<button
+				type="button"
+				class="month magic-hover active"
+				title="Mensal"
+				onclick="chargeModeMonth()">Mensal</button>
+			<button 
+				type="button" 
+				class="year magic-hover" 
+				title="Anual"
+				onclick="chargeModeYear()">Anual<em>-15%</em></button>
+		</div>
+		<div class="cards month">
 			<article class="plan_card active" onmouseenter="expandPlanCard(event)">
 				<h3>Basic</h3>
 				<div>
@@ -460,10 +472,14 @@
 				</div>
 			</article>
 			<article class="plan_card" onmouseenter="expandPlanCard(event)">
-				<h3>Business</h3>
+				<h3>Business<em>-15%</em></h3>
 				<div>
-					<h4>R$ 147</h4>
-					<h5>/mês</h5>
+					<h4 class="m">R$ 147</h4>
+					<h5 class="m">/mês</h5>
+
+					<h4 class="a">R$ 124<small>,95</small></h4>
+					<h5 class="a">/mês anualmente</h5>
+
 					<h6><em>+ 2%</em> sobre transações</h6>
 					<ul>
 						<li>Customize o seu checkout</li>
@@ -476,10 +492,14 @@
 				</div>
 			</article>
 			<article class="plan_card" onmouseenter="expandPlanCard(event)">
-				<h3>Professional</h3>
+				<h3>Professional<em>-15%</em></h3>
 				<div>
-					<h4>R$ 497</h4>
-					<h5>/mês</h5>
+					<h4 class="m">R$ 497</h4>
+					<h5 class="m">/mês</h5>
+
+					<h4 class="a">R$ 422<small>,45</small></h4>
+					<h5 class="a">/mês anualmente</h5>
+
 					<h6><em>+ 1,5%</em> sobre transações</h6>
 					<ul>
 						<li>Customize o seu checkout</li>
@@ -491,7 +511,7 @@
 					</footer>
 				</div>
 			</article>
-			<footer>
+			<footer class="personal">
 				<p><b>Personalizamos o seu plano</b> se o seu negócio  já está escalado</p>
 				<button type="button" class="button magic-hover" title="Solicite um orçamento" role="link"
 					onclick="javascript:window.open('https://api.whatsapp.com/send?phone=551135007861&text=Olá,%20gostaria%20de%20mais%20informações%20sobre%20o%20checkout%20Vega', '_blank');">

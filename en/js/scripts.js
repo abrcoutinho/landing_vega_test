@@ -152,6 +152,26 @@ function expandIntegCard(evt) {
   evt.currentTarget.className += " active";
 }
 
+
+// Plan tabs
+const planMonthBt = document.querySelector(".plan_tabs .month");
+const planYearBt = document.querySelector(".plan_tabs .year");
+const plancards = document.querySelector(".plans .cards");
+
+function chargeModeMonth() {
+  planMonthBt.classList.add("active");
+  planYearBt.classList.remove("active");
+  plancards.classList.remove("year");
+  plancards.classList.add("month");
+}
+function chargeModeYear() {
+  planMonthBt.classList.remove("active");
+  planYearBt.classList.add("active");
+  plancards.classList.add("year");
+  plancards.classList.remove("month");
+}
+
+
 // Plan cards
 function expandPlanCard(evt) {
   var i, plan_card;
