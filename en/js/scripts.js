@@ -206,20 +206,20 @@ function iframeDesk() {
   // document.getElementsByClassName("bt_mobile").classList.remove("active");
   // document.getElementsByClassName("bt_desk").classList.add("active");
   btMinimize.classList.remove("active");
-  // iframeCheckout.src = iframeCheckout.src;
+  iframeCheckout.src = iframeCheckout.src;
 }
 function iframeMob() {
   iframeContainer.classList.add("mobile");
   iframeContainer.classList.remove("desk");
   iframeContainer.classList.remove("full");
-  // iframeCheckout.src = iframeCheckout.src;
+  iframeCheckout.src = iframeCheckout.src;
 }
 function iframeFull() {
   iframeContainer.classList.add("full");
   iframeContainer.classList.remove("mobile");
   iframeContainer.classList.remove("desk");
   btMinimize.classList.add("active");
-  // iframeCheckout.src = iframeCheckout.src;
+  iframeCheckout.src = iframeCheckout.src;
 }
 
 
